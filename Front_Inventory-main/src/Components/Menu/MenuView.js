@@ -196,21 +196,25 @@ class MenuView extends Component {
   }
 
   collapse = (event) => {
-    this.collapseAll()
+    let id = event.target.id.split('-')[1]
+    let component = document.getElementById('group-' + id)
 
-    let id = event.target.id.split('-')
-    let component = document.getElementById('group-' + id[1])
-    component.style.display = 'block'
-
+    if (component.style.display === 'block') {
+      component.style.display = 'none'
+    } else {
+      component.style.display = 'block'
+      this.collapseAll(id)
+    }
+    
     return
   }
 
-  collapseAll = () => {
-    for (let i = 1; i <= 16; i++) {
+  collapseAll = (currentMenuId) => {
+   for (let i = 1; i <= 16; i++) {
       let id = 'group-' + i
       let component = document.getElementById(id)
 
-      if (component != null) {
+      if (component != null && i !== Number(currentMenuId)) {
         component.style.display = 'none'
       }
     }

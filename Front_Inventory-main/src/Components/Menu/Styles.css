@@ -104,7 +104,7 @@
 .m-menu-label:hover {
   padding-left: 37px;
   border-left: var(--scout-red) solid 3px;
-  background-color: var(--white);
+  background-color: var(--menu-hover);
 }
 
 /* MENU OTHERS */
@@ -137,7 +137,7 @@
 .selected {
   padding-left: 37px;
   border-left: var(--scout-red) solid 3px;
-  background-color: var(--white);
+  background-color: var(--menu-hover);
 }
 
 .static-selected {
